@@ -32,11 +32,21 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
 You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+
+**1. Load the data**
+
+**2. Explore, summarize and visualize the data set**
+
+**3. Design, train and test a model architecture**
+
+**4. Use the model to make predictions on new images**
+
+**5. Analyze the softmax probabilities of the new images**
+
+**6. Summarize the results with a written report**
 
 ###Data Set Summary & Exploration
 
