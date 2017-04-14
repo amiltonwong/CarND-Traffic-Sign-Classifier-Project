@@ -36,7 +36,11 @@ The goals / steps of this project are the following:
 
 You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
+The entire code are mainly listed in `Traffic_Sign_Classifier.ipynb`.
+
 **1. Load the data**
+
+Download the required data, and extract it into train/valid/test part. Load the data using pickle.load() function and check the shape of them. The corresponding code are listed in `cell 1` and `cell 2` in `Traffic_Sign_Classifier.ipynb`.
 
 **2. Explore, summarize and visualize the data set**
 
