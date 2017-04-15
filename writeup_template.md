@@ -44,7 +44,7 @@ Download the required data, and extract it into train/valid/test part. Load the 
 
 **2. Explore, summarize and visualize the data set**
 
-I use shape property and np.unique() function to get basic summary of dataset, which is listed in `cell 4`. And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The corresponding code are listed in `cell 5`.
+I use shape property and np.unique() function to get basic summary of dataset, which is listed in `cell 4`. And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The corresponding code are listed in `cell 5`. By using sorting function, I observer the smaller 15 classes are class [ 0 37 19 32 27 41 42 24 29 39 21 40 20 36 22] `(cell 6)`.
 
 
 **3. Design, train and test a model architecture**
