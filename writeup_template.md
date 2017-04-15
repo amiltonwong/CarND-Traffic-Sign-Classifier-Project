@@ -21,6 +21,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/histogram1.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
+[image2.5]: ./examples/normalized.png "normalized"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -69,7 +70,13 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image2]
 
+I normalize the image data using cv2.normalize() function to obtain zero mean and equal variance images `(cell 8 & 9)`. The comparison between the orginal and normalized one is shown in the following figure:
+
+![alt text][image2.5]
+
 As a last step, I normalized the image data because ...
+
+
 
 I decided to generate additional data because ... 
 
