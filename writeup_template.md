@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./examples/histogram1.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -52,8 +52,11 @@ I use shape property and np.unique() function to get basic summary of dataset, w
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
+And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The following histogram diagram is an exploratory visualization of the data set. 
 
-And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The corresponding code are listed in `cell 5`. By using sorting function, I observer the smaller 15 classes are class [ 0 37 19 32 27 41 42 24 29 39 21 40 20 36 22] `(cell 6)`.
+![alt text][image1]
+
+The corresponding code are listed in `cell 5`. Then, by using sorting function, I observer the smaller 15 classes are class [ 0 37 19 32 27 41 42 24 29 39 21 40 20 36 22] `(cell 6)`.
 
 
 **3. Design, train and test a model architecture**
@@ -81,7 +84,7 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
+
 
 ###Design and Test a Model Architecture
 
