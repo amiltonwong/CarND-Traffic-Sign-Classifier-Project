@@ -52,7 +52,7 @@ I use shape property and np.unique() function to get basic summary of dataset, w
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The following histogram diagram is an exploratory visualization of the data set. 
+And then, I perform an exploratory visualization of the dataset. First, I plot a histogram showing the inputs per class using np.bincount() and display one instance for each class (0-42). The following histogram diagram is an exploratory visualization of the data set, which shows the number of instance input for each classes.
 
 ![alt text][image1]
 
@@ -61,34 +61,7 @@ The corresponding code are listed in `cell 5`. Then, by using sorting function, 
 
 **3. Design, train and test a model architecture**
 
-**4. Use the model to make predictions on new images**
-
-**5. Analyze the softmax probabilities of the new images**
-
-**6. Summarize the results with a written report**
-
-###Data Set Summary & Exploration
-
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
-
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
-
-####2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
-
-
-###Design and Test a Model Architecture
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+3.1 Preprocess the image data
 
 As a first step, I decided to convert the images to grayscale because ...
 
@@ -106,7 +79,28 @@ Here is an example of an original image and an augmented image:
 
 ![alt text][image3]
 
-The difference between the original data set and the augmented data set is the following ... 
+The difference between the original data set and the augmented data set is the following 
+
+3.2 Define model architecture
+
+3.3 Training the model
+
+3.4 Validation and testing
+
+**4. Use the model to make predictions on new images**
+
+**5. Analyze the softmax probabilities of the new images**
+
+**6. Summarize the results with a written report**
+
+
+###Design and Test a Model Architecture
+
+####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+
+
+
+
 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
