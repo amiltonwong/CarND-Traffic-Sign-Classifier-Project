@@ -74,7 +74,13 @@ I normalize the image data using cv2.normalize() function to obtain zero mean an
 
 ![alt text][image2.5]
 
-As a last step, I normalized the image data because ...
+As a last step, I shuffle the image data by
+
+```
+from sklearn.utils import shuffle
+
+X_train, y_train = shuffle(X_train, y_train)
+```
 
 
 
@@ -89,6 +95,29 @@ Here is an example of an original image and an augmented image:
 The difference between the original data set and the augmented data set is the following 
 
 3.2 Define model architecture
+
+My final architecture involves a convolutional neural network (CNN) similar to that of AlexNet, but with several important updates/changes. In general, the architecture incorporates two convolution layers followed by two fully connected layers.
+
+General Parameters:
+
+Number of hidden layers = 64
+Number of patches for the convolutions = 5
+Depth of hidden layers = 64
+1st Convolutional Layer
+
+The first layer is fed the 32x32x3 color image. This image is put through a 2-dimensional convolution with a stride of 1. Next, the result of the convolution is added with a bias vector and their sum is processed using the tf.nn.relu activation operator. Then, the result of this activation is put through a max pooling operator using kernal of [1,2,2,1] and a stride of [1,2,2,1]. Finally, the result of this max pooling is put through a local response normalization operation.
+
+2nd Convolutional Layer
+
+The second convolutional layer is identical to the first, with two main exceptions. First is that the second layer is fed the output of the first convolutional layer. Second is that following the activation layer, the local responsed normalization occurs prior to the max pooling operator.
+
+1st Fully Connected Layer
+
+The output of the second convolutional layer is reshaped and multiplied by a weight matrix. The result of this multiplication is added to a bias vector, and that summation is passed through the tf.nn.relu activation function.
+
+2nd Fully Connected Layer
+
+The network concludes by multiplying the result of the 1st fully connected layer with a weight matrix, adding a bias, and returning the result for the softmax probability operation to provide the final classification.
 
 3.3 Training the model
 
