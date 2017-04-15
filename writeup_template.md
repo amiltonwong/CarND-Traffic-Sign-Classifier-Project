@@ -44,6 +44,8 @@ Download the required data, and extract it into train/valid/test part. Load the 
 
 **2. Explore, summarize and visualize the data set**
 
+I use shape property and np.unique() function to get basic summary of dataset, which is listed in `cell 4`.
+
 **3. Design, train and test a model architecture**
 
 **4. Use the model to make predictions on new images**
