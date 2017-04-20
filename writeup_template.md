@@ -105,21 +105,25 @@ Number of fully-connected layers = 3
 Size of patches for the convolutions = 5x5
 Size of patches for the pooling = 2x2
 
-1st Convolutional Layer
+1st Convolutional Layer (Input = 32x32x3. Output = 14x14x6)
 
-The first layer is fed the 32x32x3 color image. This image is put through a 2-dimensional convolution with a stride of 1. Next, the result of the convolution is added with a bias vector and their sum is processed using the tf.nn.relu activation operator. Then, the result of this activation is put through a max pooling operator using kernal of [1,2,2,1] and a stride of [1,2,2,1]. Finally, the result of this max pooling is put through a local response normalization operation.
+The first layer is fed the 32x32x3 color image. This image is put through a 2-dimensional convolution with a stride of 1. Next, the result of the convolution is added with a bias vector and their sum is processed using the tf.nn.relu activation operator. Then, the result of this activation is put through a max pooling operator using kernal of [1,2,2,1] and a stride of [1,2,2,1]. Finally, the result of this max pooling is passed to succeeding covolution layer.
 
-2nd Convolutional Layer
+2nd Convolutional Layer  (Input = 14x14x6. Output = 5x5x16)
 
-The second convolutional layer is identical to the first, with two main exceptions. First is that the second layer is fed the output of the first convolutional layer. Second is that following the activation layer, the local responsed normalization occurs prior to the max pooling operator.
+The second convolutional layer is identical to the first, with one main exceptions. The second layer is fed the output of the first convolutional layer. 
 
-1st Fully Connected Layer
+1st Fully Connected Layer (Input = 400. Output = 120)
 
-The output of the second convolutional layer is reshaped and multiplied by a weight matrix. The result of this multiplication is added to a bias vector, and that summation is passed through the tf.nn.relu activation function.
+The output of the second convolutional layer is flattened into 5x5x16=400 first and multiplied by a weight matrix. The result of this multiplication is added to a bias vector, and that summation is passed through the tf.nn.relu activation function.
 
-2nd Fully Connected Layer
+2nd Fully Connected Layer (Input = 120. Output = 84)
+The second fully connected layer is almost identical to the first fully connected, except the output dimention.
 
-The network concludes by multiplying the result of the 1st fully connected layer with a weight matrix, adding a bias, and returning the result for the softmax probability operation to provide the final classification.
+3rd Fully Connected Layer (Input = 84. Output = 43)
+The network concludes by multiplying the result of the 2nd fully connected layer with a weight matrix, adding a bias, and returning the result for the logits operation to provide the final classification.
+
+The details of the network structures is listed in `cell 12`
 
 3.3 Training the model
 
