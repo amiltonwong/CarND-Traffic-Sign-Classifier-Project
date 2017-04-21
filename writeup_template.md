@@ -23,11 +23,11 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image2.5]: ./examples/normalized.png "normalized"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./test_german_traffic_sign/01.jpg "Traffic Sign 1"
+[image5]: ./test_german_traffic_sign/02.jpg "Traffic Sign 2"
+[image6]: ./test_german_traffic_sign/03.jpg "Traffic Sign 3"
+[image7]: ./test_german_traffic_sign/04.jpg "Traffic Sign 4"
+[image8]: ./test_german_traffic_sign/05.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -150,13 +150,13 @@ I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The numb
 At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch, (EPOCH 100) Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
 
 3.4 Validation and testing
-During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.964 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
-For testing, the accuracy is 0.936, which is quite satisfactory. The corresponding code is listed in `cell 18`
+During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.969 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
+For testing, the accuracy is 0.949, which is quite satisfactory. The corresponding code is listed in `cell 18`
 
 In summary, my final model results were:
 * training set accuracy of 100%
-* validation set accuracy of 96.4% 
-* test set accuracy of 93.6%
+* validation set accuracy of 96.9% 
+* test set accuracy of 94.9%
 
 From the training/validation/testing accuracy I obtain,  the chosen model (LeNet5 with extenstion) is a suitable one in this project.
 
