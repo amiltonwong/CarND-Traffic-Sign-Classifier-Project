@@ -126,11 +126,12 @@ The network concludes by multiplying the result of the 2nd fully connected layer
 The details of the network structures is listed in `cell 12`
 
 3.3 Training the model
-I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5.
-At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches.
-
+I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5. I use Adam method to optimize the loss function (cross entropy).
+At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch, (EPOCH 100) Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
 
 3.4 Validation and testing
+During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.964 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
+For testing, the accuracy is 0.936, which is quite satisfactory. The corresponding code is listed in `cell 18`
 
 **4. Use the model to make predictions on new images**
 
