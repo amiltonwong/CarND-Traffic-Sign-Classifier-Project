@@ -161,13 +161,11 @@ In summary, my final model results were:
 From the training/validation/testing accuracy I obtain,  the chosen model (LeNet5 with extenstion) is a suitable one in this project.
 
 **4. Use the model to make predictions on new images**
-Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images
+Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images (code: `cell 24`)
 
 ![alt text][image4]
 
 As these test images are captured from real scenario with diverse background, it is good to use them for testing the generalization capability of my trained network model. 
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
@@ -179,7 +177,7 @@ Here are the results of the prediction:
 | Children crossing     			| Children crossing 										|
 | Pedestrians	      		| Pedestrians					 				|
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This keeps the consistency with the accuracy on the test set of GT-SRB, which reaches into more than 94 % in testing accuracy.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
