@@ -23,8 +23,8 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image2.5]: ./examples/normalized.png "normalized"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./test_german_traffic_sign/01-05.png "Traffic Sign 1--5"
-[image5]: ./test_german_traffic_sign/02.jpg "Traffic Sign 2"
+[image4]: ./output_images/01-05.png "Traffic Sign 1--5"
+[image5]: ./output_images/bar_charts.jpg "Traffic Sign 2"
 [image6]: ./test_german_traffic_sign/03.jpg "Traffic Sign 3"
 [image7]: ./test_german_traffic_sign/04.jpg "Traffic Sign 4"
 [image8]: ./test_german_traffic_sign/05.jpg "Traffic Sign 5"
@@ -178,6 +178,9 @@ Here are the results of the prediction:
 | Pedestrians	      		| Pedestrians					 				|
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This keeps the consistency with the accuracy on the test set of GT-SRB, which reaches into more than 94 % in testing accuracy.
+
+The following bar charts are used to visualize the softmax probabilities for each prediction. In each bar chart, the corresponding top 5 softmax probabilities for each image along with the sign type of each probability are shownn.
+
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
