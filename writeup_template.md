@@ -126,6 +126,9 @@ The network concludes by multiplying the result of the 2nd fully connected layer
 The details of the network structures is listed in `cell 12`
 
 3.3 Training the model
+I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5.
+At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches.
+
 
 3.4 Validation and testing
 
