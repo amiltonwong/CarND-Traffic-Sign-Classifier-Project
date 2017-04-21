@@ -95,7 +95,7 @@ Here is an example of an original image and an augmented image:
 The difference between the original data set and the augmented data set is the following 
 
 3.2 Define model architecture
-As the problem (traffic sign classfication) is a typical image recognition problem, it's the best to try CNN-based network model.
+As the problem (traffic sign classfication) is a typical image recognition problem, it's the best to try CNN-based network model. As the problem task only involes 43 classes and around 30,000 training images, very deep CNN models such as VGG/Inception/ResNet are not suitable. For simplicity and effectiveness, I choose the model based on LeNet 5.
 My final architecture involves a convolutional neural network (CNN) similar to that of LeNet, but with several important updates/changes. In general, the architecture incorporates two convolution layers (conv1 and conv2) followed by three fully connected layers (fc1, fc2 and fc3, fc3 is used for logit output). To help to reduce the overfitting effect, I apply dropout method: append dropout layer after fc1 and fc2 respectivey, which take the majority part of parameters in the whole network.
 
 General Parameters:
@@ -158,20 +158,17 @@ In summary, my final model results were:
 * validation set accuracy of 96.4% 
 * test set accuracy of 93.6%
 
+From the training/validation/testing accuracy I obtain,  the chosen model (LeNet5 with extenstion) is a suitable one in this project.
+
 **4. Use the model to make predictions on new images**
+Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images
 
-**5. Analyze the softmax probabilities of the new images**
+![alt text][image4]
+![alt text][image5]
+![alt text][image6]
+![alt text][image7]
+![alt text][image8]
 
-**6. Summarize the results with a written report**
-
-
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 If a well known architecture was chosen:
 * What architecture was chosen?
