@@ -23,7 +23,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image2.5]: ./examples/normalized.png "normalized"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./test_german_traffic_sign/01.jpg "Traffic Sign 1"
+[image4]: ./test_german_traffic_sign/01-05.png "Traffic Sign 1--5"
 [image5]: ./test_german_traffic_sign/02.jpg "Traffic Sign 2"
 [image6]: ./test_german_traffic_sign/03.jpg "Traffic Sign 3"
 [image7]: ./test_german_traffic_sign/04.jpg "Traffic Sign 4"
@@ -164,11 +164,6 @@ From the training/validation/testing accuracy I obtain,  the chosen model (LeNet
 Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images
 
 ![alt text][image4]
-![alt text][image5]
-![alt text][image6]
-![alt text][image7]
-![alt text][image8]
-
 
 If a well known architecture was chosen:
 * What architecture was chosen?
