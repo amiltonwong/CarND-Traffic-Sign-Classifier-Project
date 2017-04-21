@@ -165,6 +165,8 @@ Then, I test the model on new German traffic sign images downloaded from interne
 
 ![alt text][image4]
 
+As these test images are captured from real scenario with diverse background, it is good to use them for testing the generalization capability of my trained network model. 
+
 If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
