@@ -141,8 +141,6 @@ My final model consisted of the following layers:
 | RELU					|												|
 | Dropout					|				Prob. = 0.5								|
 | Fully connected(Logits)				| Input = 84. Output = 43   									|
-|						|												|
-|						|												|
 
 
 The details of the network structures is listed in `cell 12`
