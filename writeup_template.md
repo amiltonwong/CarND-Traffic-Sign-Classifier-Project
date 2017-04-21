@@ -95,7 +95,7 @@ Here is an example of an original image and an augmented image:
 The difference between the original data set and the augmented data set is the following 
 
 3.2 Define model architecture
-
+As the problem (traffic sign classfication) is a typical image recognition problem, it's the best to try CNN-based network model.
 My final architecture involves a convolutional neural network (CNN) similar to that of LeNet, but with several important updates/changes. In general, the architecture incorporates two convolution layers (conv1 and conv2) followed by three fully connected layers (fc1, fc2 and fc3, fc3 is used for logit output). To help to reduce the overfitting effect, I apply dropout method: append dropout layer after fc1 and fc2 respectivey, which take the majority part of parameters in the whole network.
 
 General Parameters:
@@ -123,34 +123,6 @@ The second fully connected layer is almost identical to the first fully connecte
 3rd Fully Connected Layer (Input = 84. Output = 43)
 The network concludes by multiplying the result of the 2nd fully connected layer with a weight matrix, adding a bias, and returning the result for the logits operation to provide the final classification.
 
-The details of the network structures is listed in `cell 12`
-
-3.3 Training the model
-I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5. I use Adam method to optimize the loss function (cross entropy).
-At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch, (EPOCH 100) Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
-
-3.4 Validation and testing
-During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.964 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
-For testing, the accuracy is 0.936, which is quite satisfactory. The corresponding code is listed in `cell 18`
-
-**4. Use the model to make predictions on new images**
-
-**5. Analyze the softmax probabilities of the new images**
-
-**6. Summarize the results with a written report**
-
-
-###Design and Test a Model Architecture
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
-
-
-
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -164,19 +136,30 @@ My final model consisted of the following layers:
 | Softmax				| etc.        									|
 |						|												|
 |						|												|
- 
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+The details of the network structures is listed in `cell 12`
 
-To train the model, I used an ....
+3.3 Training the model
+I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5. I use Adam method to optimize the loss function (cross entropy). Learning rate is 0.001.
+At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch, (EPOCH 100) Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+3.4 Validation and testing
+During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.964 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
+For testing, the accuracy is 0.936, which is quite satisfactory. The corresponding code is listed in `cell 18`
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+In summary, my final model results were:
+* training set accuracy of 100%
+* validation set accuracy of 96.4% 
+* test set accuracy of 93.6%
+
+**4. Use the model to make predictions on new images**
+
+**5. Analyze the softmax probabilities of the new images**
+
+**6. Summarize the results with a written report**
+
+
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
