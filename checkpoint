@@ -1,2 +1,2 @@
-model_checkpoint_path: "lenet5_gtsrb"
-all_model_checkpoint_paths: "lenet5_gtsrb"
+model_checkpoint_path: "lenet5_gtsrb.ckpt"
+all_model_checkpoint_paths: "lenet5_gtsrb.ckpt"
