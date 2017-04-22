@@ -80,7 +80,7 @@ X_train, y_train = shuffle(X_train, y_train)
 
 3.2 Define model architecture
 As the problem (traffic sign classfication) is a typical image recognition problem, it's the best to try CNN-based network model. As the problem task only involes 43 classes and around 30,000 training images, very deep CNN models such as VGG/Inception/ResNet are not suitable. For simplicity and effectiveness, I choose the model based on LeNet 5.
-My final architecture involves a convolutional neural network (CNN) similar to that of LeNet, but with several important updates/changes. In general, the architecture incorporates two convolution layers (conv1 and conv2) followed by three fully connected layers (fc1, fc2 and fc3, fc3 is used for logit output). To help to reduce the overfitting effect, I apply dropout method: append dropout layer after fc1 and fc2 respectivey, which take the majority part of parameters in the whole network.
+My final architecture involves a convolutional neural network (CNN) similar to that of LeNet 5, but with several important updates/changes. In general, the architecture incorporates two convolution layers (conv1 and conv2) followed by three fully connected layers (fc1, fc2 and fc3, fc3 is used for logit output). To help to reduce the overfitting effect, I apply dropout method: append dropout layer after fc1 and fc2 respectivey, which take the majority part of parameters in the whole network.
 
 General Parameters:
 
@@ -91,7 +91,7 @@ Size of patches for the pooling = 2x2
 
 1st Convolutional Layer (Input = 32x32x3. Output = 14x14x6)
 
-The first layer is fed the 32x32x3 color image. This image is put through a 2-dimensional convolution with a stride of 1. Next, the result of the convolution is added with a bias vector and their sum is processed using the tf.nn.relu activation operator. Then, the result of this activation is put through a max pooling operator using kernal of [1,2,2,1] and a stride of [1,2,2,1]. Finally, the result of this max pooling is passed to succeeding covolution layer.
+The first layer is fed with 32x32x3 color image. This image is put through a 2-dimensional convolution with a stride of 1. Next, the result of the convolution is added with a bias vector and their sum is processed using the tf.nn.relu activation operator. Then, the result of this activation is put through a max pooling operator using kernal of [1,2,2,1] and a stride of [1,2,2,1]. Finally, the result of this max pooling is passed to succeeding covolution layer.
 
 2nd Convolutional Layer  (Input = 14x14x6. Output = 5x5x16)
 
@@ -99,10 +99,10 @@ The second convolutional layer is identical to the first, with one main exceptio
 
 1st Fully Connected Layer (Input = 400. Output = 120)
 
-The output of the second convolutional layer is flattened into 5x5x16=400 first and multiplied by a weight matrix. The result of this multiplication is added to a bias vector, and that summation is passed through the tf.nn.relu activation function.
+The output of the second convolutional layer is flattened into 5x5x16=400 first and multiplied by a weight matrix. The result of this multiplication is added to a bias vector, and that summation is passed through the tf.nn.relu activation function. To reduce overfitting effect, dropout layer (prob.=0.5) is added. 
 
 2nd Fully Connected Layer (Input = 120. Output = 84)
-The second fully connected layer is almost identical to the first fully connected, except the output dimention.
+The second fully connected layer is almost identical to the first fully connected, except the input and output dimention. 
 
 3rd Fully Connected Layer (Input = 84. Output = 43)
 The network concludes by multiplying the result of the 2nd fully connected layer with a weight matrix, adding a bias, and returning the result for the logits operation to provide the final classification.
@@ -130,22 +130,22 @@ My final model consisted of the following layers:
 The details of the network structures is listed in `cell 12`
 
 3.3 Training the model
-I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability in dropout is 0.5. I use Adam method to optimize the loss function (cross entropy). Learning rate is 0.001.
-At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch, (EPOCH 100) Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
+I take mini-batch (BATCH_SIZE = 128) SGD approach to train the network. The number of epochs is 100. The probability used in dropout is 0.5. I use Adam method to optimize the loss function (cross entropy). Learning rate is 0.001.
+At each epoch, the accuracy in training and validation are printed out. We could see the accuracy is continually increasing in most of the epoches. At the last epoch(EPOCH 100), Training Accuracy and Validation Accuracy reach into 1.000 and 0.964 respectively, which is a quite satisfactory result. The corresponding code is listed in `cell 17`.
 
 3.4 Validation and testing
 During the training, I check the validation accuracy to prevent overfitting. The Validation Accuracy reached into 0.969 at last epoch (100), and during the whole epoches in training, we could see the Validation Accuracy continually increasing.
-For testing, the accuracy is 0.949, which is quite satisfactory. The corresponding code is listed in `cell 18`
+For testing, the accuracy is 0.949, which is quite satisfactory. The corresponding code is listed in `cell 18`.
 
 In summary, my final model results were:
 * training set accuracy of 100%
 * validation set accuracy of 96.9% 
 * test set accuracy of 94.9%
 
-From the training/validation/testing accuracy I obtain,  the chosen model (LeNet5 with extenstion) is a suitable one in this project.
+From the obtained training/validation/testing accuracy,  the chosen model (LeNet5 with extenstion) is a suitable one in this project.
 
 **4. Use the model to make predictions on new images**
-Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images (code: `cell 24`)
+Then, I test the model on new German traffic sign images downloaded from internet. The following 5 pictures are the test images. (code: `cell 19`)
 
 ![alt text][image4]
 
@@ -161,9 +161,9 @@ Here are the results of the prediction:
 | Children crossing     			| Children crossing 										|
 | Pedestrians	      		| Pedestrians					 				|
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This keeps the consistency with the accuracy on the test set of GT-SRB, which reaches into more than 94 % in testing accuracy.
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This keeps the consistency with the accuracy on the test set of GT-SRB, which reaches into more than 94 % in testing accuracy. (code: `cell 20-22, 24`)
 
-To check the certainties in each prediction, bar charts are used. The corresponding code and the numerical value are located in `cell 26`.
+To check the certainties in each prediction, bar charts are used. The corresponding code and the numerical probability values are located in `cell 26`.
 The following bar charts are used to visualize the softmax probabilities for each prediction. In each bar chart, the corresponding top 5 softmax probabilities for each image along with the sign type of each probability are shown.
 
 ![alt text][image5]
