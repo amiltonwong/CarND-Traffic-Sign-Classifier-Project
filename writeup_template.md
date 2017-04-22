@@ -165,7 +165,7 @@ Then, I test the model on new German traffic sign images downloaded from interne
 
 ![alt text][image4]
 
-As these test images are captured from real scenario with diverse background, it is good to use them for testing the generalization capability of my trained network model. 
+As these test images are captured from real scenario with diverse background, so it is good to use them for testing the generalization capability of my trained network model. 
 
 Here are the results of the prediction:
 
@@ -179,12 +179,12 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This keeps the consistency with the accuracy on the test set of GT-SRB, which reaches into more than 94 % in testing accuracy.
 
+To check the certainties in each prediction, bar charts are used. The corresponding code and the numerical value are located in `cell 26`.
 The following bar charts are used to visualize the softmax probabilities for each prediction. In each bar chart, the corresponding top 5 softmax probabilities for each image along with the sign type of each probability are shown.
 
 ![alt text][image5]
 
-
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+We can see the top one probabilities in each prediction is very high against other top-5 probabilities, which shows that my model is very certain to its output.
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
