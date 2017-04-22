@@ -37,11 +37,11 @@ The entire code are mainly listed in `Traffic_Sign_Classifier.ipynb`.
 
 **1. Load the data**
 
-Download the required data, and extract it into train/valid/test part. Load the data using pickle.load() function and check the shape of them. The corresponding code are listed in `cell 1` and `cell 2` in `Traffic_Sign_Classifier.ipynb`.
+Download the required data, and extract it into train/valid/test part. Load the data using pickle.load() function and check the shape of them. The corresponding code are listed in `cell 1` and `cell 3` in `Traffic_Sign_Classifier.ipynb`.
 
 **2. Explore, summarize and visualize the data set**
 
-I use shape property and np.unique() function to get basic summary of dataset, which is listed in `cell 4`. 
+I use shape property and np.unique() function to get basic summary of dataset, which is listed in `cell 5`. 
 
 * The size of training set is 34799
 * The size of the validation set is 4410
@@ -53,7 +53,7 @@ And then, I perform an exploratory visualization of the dataset. First, I plot a
 
 ![alt text][image1]
 
-The corresponding code are listed in `cell 5`. Then, by using sorting function, I observer the smaller 15 classes are class [ 0 37 19 32 27 41 42 24 29 39 21 40 20 36 22] `(cell 6)`.
+The corresponding code are listed in `cell 6`. Then, by using sorting function, I observer the smaller 15 classes are class [ 0 37 19 32 27 41 42 24 29 39 21 40 20 36 22] `(cell 7)`.
 
 
 **3. Design, train and test a model architecture**
@@ -63,32 +63,20 @@ The corresponding code are listed in `cell 5`. Then, by using sorting function, 
 As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before and after grayscaling.
+For this traffic sign classification project, color information is essential for accurate classification. Thus, I did not convert the data into grayscale. I use the orginal RGB images.
 
-![alt text][image2]
-
-I normalize the image data using cv2.normalize() function to obtain zero mean and equal variance images `(cell 8 & 9)`. The comparison between the orginal and normalized one is shown in the following figure:
+While the range of intensity has obvious impacton optimization operation in training step. Normalization step is desired.
+Thus, I normalize the image data using cv2.normalize() function to obtain zero mean and equal variance images `(cell 8 -- 10)`. The comparison between the orginal and normalized one is shown in the following figure:
 
 ![alt text][image2.5]
 
-As a last step, I shuffle the image data by
+As the very early step, I already shuffle the training data by shuffle() in `cell 2`.
 
 ```
 from sklearn.utils import shuffle
 
 X_train, y_train = shuffle(X_train, y_train)
 ```
-
-
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following 
 
 3.2 Define model architecture
 As the problem (traffic sign classfication) is a typical image recognition problem, it's the best to try CNN-based network model. As the problem task only involes 43 classes and around 30,000 training images, very deep CNN models such as VGG/Inception/ResNet are not suitable. For simplicity and effectiveness, I choose the model based on LeNet 5.
